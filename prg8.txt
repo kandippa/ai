@@ -1,0 +1,90 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 TimesNewRomanPS-BoldMT;\f1\froman\fcharset0 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b\fs13\fsmilli6960 \cf2 PROGRAM 8:\
+
+\f1\b0 <RelativeLayout\
+xmlns:android="http://schemas.android.com/apk/res/android"\
+xmlns:tools="http://schemas.android.com/tools"\
+android:layout_width="match_parent"\
+android:layout_height="match_parent"\
+android:paddingBottom="@dimen/activity_vertical_margin"\
+android:paddingLeft="@dimen/activity_horizontal_margin"\
+android:paddingRight="@dimen/activity_horizontal_margin"\
+android:paddingTop="@dimen/activity_vertical_margin"\
+tools:context=".MainActivity" >\
+<LinearLayout\
+android:layout_width="match_parent"\
+android:layout_height="match_parent"\
+android:gravity="center"\
+android:orientation="vertical"\
+android:padding="20dp">\
+<TextView\
+android:id="@+id/textView1"\
+android:layout_width="wrap_content"\
+android:layout_height="wrap_content"\
+android:text="Welcome to Menu Demo"\
+android:textSize="20sp"\
+android:padding="10dp"/>\
+</LinearLayout></RelativeLayout>\
+package com.example.prog8;\
+import android.app.Activity;\
+import android.os.Bundle;\
+import android.view.Menu;\
+import android.view.MenuInflater;\
+import android.view.MenuItem;\
+import android.widget.TextView;\
+import android.widget.Toast;\
+public class MainActivity extends Activity \{\
+TextView textView;\
+@Override\
+protected void onCreate(Bundle savedInstanceState) \{\
+super.onCreate(savedInstanceState);\
+setContentView(R.layout.activity_main);\
+textView = (TextView) findViewById(R.id.textView1);\
+\}\
+@Override\
+public boolean onCreateOptionsMenu(Menu menu) \{\
+MenuInflater inflater = getMenuInflater();\
+inflater.inflate(R.menu.main_menu, menu);\
+return true;\
+\}\
+@Override\
+public boolean onOptionsItemSelected(MenuItem item) \{\
+switch (item.getItemId()) \{\
+case R.id.menu_about:\
+textView.setText("You selected About");\
+Toast.makeText(this, "About clicked",\
+Toast.LENGTH_SHORT).show();\
+return true;\
+case R.id.menu_settings:\
+textView.setText("You selected Settings");\
+Toast.makeText(this, "Settings clicked",\
+Toast.LENGTH_SHORT).show();\
+return true;\
+case R.id.menu_exit:\
+Toast.makeText(this, "Exiting...", Toast.LENGTH_SHORT).show();\
+finish();\
+return true;\
+default:\
+return super.onOptionsItemSelected(item);\
+\}\
+\}\}\
+<menu xmlns:android="http://schemas.android.com/apk/res/android">\
+<item\
+android:id="@+id/menu_about"\
+android:title="About"\
+android:icon="@android:drawable/ic_menu_info_details"/>\
+<item\
+android:id="@+id/menu_settings"\
+android:title="Settings"\
+android:icon="@android:drawable/ic_menu_manage"/>\
+<item\
+android:id="@+id/menu_exit"\
+android:title="Exit"\
+android:icon="@android:drawable/ic_lock_power_off"/>\
+</menu>}
