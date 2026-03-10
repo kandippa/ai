@@ -31,39 +31,15 @@ class Person:
                print(child.name)
 
        else:
-
-           print(f"{self.name} has no children.")
-
- 
-
-# Creating instances of Person
+            print(f"{self.name} has no children.")
 
 father = Person("John", 40, "Male")
-
 mother = Person("Jane", 38, "Female")
-
 son = Person("Alex", 12, "Male")
-
 daughter = Person("Emma", 8, "Female")
-
- 
-
-# Adding children to the parents
-
 father.add_child(son)
-
 father.add_child(daughter)
-
- 
-
 mother.add_child(son)
-
 mother.add_child(daughter)
-
- 
-
-# Displaying the children of each parent
-
 father.display_children()
-
 mother.display_children()
