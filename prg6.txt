@@ -1,12 +1,7 @@
 N = 4
-
 ld = [0] * (2 * N - 1)  # Corrected size for diagonals
-
 rd = [0] * (2 * N - 1)
-
 cl = [0] * N
-
- 
 
 def printSolution(board):
 
@@ -18,9 +13,7 @@ def printSolution(board):
 
        print()
 
- 
-
-def solveNQUtil(board, col):
+ def solveNQUtil(board, col):
 
    if col >= N:
 
@@ -61,8 +54,6 @@ def solveNQ():
    printSolution(board)
 
    return True
-
- 
 
 if __name__ == "__main__":
 
